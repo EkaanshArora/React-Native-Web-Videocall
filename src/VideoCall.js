@@ -59,7 +59,7 @@ function App() {
             <View style={styles.participantsView}>
               <FlatList data={participants} renderItem={({ item }) => {
                 return (
-                  <View style={{ flexDirection: 'row' }}>
+                  <View style={{ flexDirection: 'row', flex:1, }}>
                     <Text style={ styles.participantsText }>
                       {item.title}
                     </Text>
@@ -160,11 +160,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   participantsText:{
+    flex:1,
     fontSize: Platform.OS==='web'?22:17,
+    flexDirection:'row',
     color: '#fff',
     lineHeight: 20,
     paddingTop: 10,
-    paddingLeft: 10
+    paddingLeft: 10,
   },
   participantsMicButton:{
     width: 17,
@@ -174,7 +176,10 @@ const styles = StyleSheet.create({
     marginLeft: 10
   },
   participantsButtonContainer:{
-    flexDirection:'row'
+    flex:.3,
+    flexDirection:'row',
+    alignSelf:'flex-end',
+    paddingRight:20,
   }
 })
 
@@ -191,4 +196,4 @@ const participants = [{
   id: 2
 }];
 
-export default App;
+export default App; 
